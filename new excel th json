@@ -1,0 +1,32 @@
+{
+  "name": "th-newexcel-bulk",
+  "description": "BULK mode test - generates 7 separate XML files",
+  "inputType": "New Excel",
+  "outputType": "BULK",
+  "inputEncrypted": false,
+  "outputEncrypted": false,
+  "confidential": false,
+  "valueDateColumn": "M",
+  "inputFileFormat": "xlsx",
+  "outputFileFormat": "xml",
+  "testScenario": [
+    {
+      "success": [
+        {
+          "updateValueDateinFile": true,
+          "description": "BULK test with all 7 transaction types",
+          "inputFileLoc": "/Lenovo/Downloads/WHT rate check -all payment (2) 2.xlsx",
+          "expectedOutputFiles": {
+            "DC": "/Lenovo/Downloads/Expected/DB_DC_expected.xml",
+            "BN": "/Lenovo/Downloads/Expected/DB_BN_expected.xml",
+            "MC": "/Lenovo/Downloads/Expected/DB_MC_expected.xml",
+            "FT": "/Lenovo/Downloads/Expected/DB_FT_expected.xml",
+            "TT": "/Lenovo/Downloads/Expected/DB_TT_expected.xml",
+            "PPSingle": "/Lenovo/Downloads/Expected/DB_PPSingle_expected.xml",
+            "PPBulk": "/Lenovo/Downloads/Expected/DB_PPBulk_expected.xml"
+          }
+        }
+      ]
+    }
+  ]
+}
