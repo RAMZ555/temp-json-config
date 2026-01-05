@@ -1,0 +1,34 @@
+{
+  "name": "th-Rtpe-Input file format",
+  "description": "success failure test cases for fixed length payment file - PPS, FT",
+  "inputType": "Multipurpose MC CSV",
+  "outputType": "payment file",
+  "inputEncrypted": false,
+  "outputEncrypted": false,
+  "confidential": false,
+  "inputFileFormat": "csv",
+  "outputFileFormat": "xml",
+
+  "valueDateChange": {
+    "enabled": true,
+    "dateFormat": "ddMMyyyy",
+    "daysToAdd": 2,
+    "csvConfig": {
+      "delimiter": ",",
+      "dateColumnIndex": 2,  // this is 0 based index ...example : if column is D is then u have to give 3 not 4 
+      "startingRow": 0  // same o based if no header data starts fromfirst row give 0 if there is header data start from row 2 then give 1
+    }
+  },
+  "testScenario": [
+    {
+      "success": [
+        {
+          "updateValueDateinFile": true,
+          "description": "PSB, FT testing on scenarios 1,2,3,4,5",
+          "inputFileLoc": "/Lenovo/Downloads/Multipurposetest (1) (1) 2.csv",
+          "expectedOutputFile": "/Lenovo/Downloads/Payment_File_JB_0105173024345 (1).xml"
+        }
+      ]
+    }
+  ]
+}
