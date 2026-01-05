@@ -9,6 +9,27 @@
   "valueDateColumn": "M",
   "inputFileFormat": "xlsx",
   "outputFileFormat": "xml",
+
+  "valueDateChange": {
+    "enabled": true,
+    "dateFormat": "ddMMyyyy",
+    "daysToAdd": 2,
+    "excelConfig": {
+      "sheets": [
+        {
+          "sheetName": "Sheet1",
+          "columnAddress": "M",
+          "startingRow": 1
+        },
+        {
+          "sheetName": "Sheet2",
+          "columnAddress": "D",
+          "startingRow": 1
+        }
+      ]
+    }
+  },
+
   "testScenario": [
     {
       "success": [
