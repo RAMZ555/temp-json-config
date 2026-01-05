@@ -8,28 +8,29 @@
   "confidential": false,
   "inputFileFormat": "txt",
   "outputFileFormat": "xml",
-  
-"valueDateChange": {
-  "enabled": true,
-  "dateFormat": "yyyyMMdd",
-  "daysToAdd": 2,
-  "delimiterConfig": {
-    "delimiter": ",",
-    "dateColumnIndex": 7,
-    "startingRow": 1
-  }
-},
-  
-  "testScenarios": [
+
+  "valueDateChange": {
+    "enabled": true,
+    "dateFormat": "yyyyMMdd",
+    "daysToAdd": 2,
+    "delimiterConfig": {
+      "delimiter": ",",
+      "dateColumnIndex": 7,
+      "startingRow": 1
+    }
+  },
+
+  "testScenario": [
     {
       "success": [
         {
           "updateValueDateinFile": true,
           "description": "PSB, FT testing on scenarios 1,2,3,4,5",
-          "inputFileLoc": "/Lenovo/Downloads/fixed_length_payment.txt",
-          "expectedOutputFile": "/Lenovo/Downloads/Payment_File_Output.xml"
+          "inputFileLoc": "/Lenovo/Downloads/R type-All (2).txt",
+          "expectedOutputFile": "/Lenovo/Downloads/Payment_File_1J_0105132139776.xml"
         }
-      ],
+      ]
+    },
       "failure": [
         {
           "updateValueDateinFile": false,
