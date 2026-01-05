@@ -1,0 +1,53 @@
+{
+  "name": "th-Rtpe-Input file format",
+  "description": "success failure test cases for fixed length payment file - PPS, FT",
+  "inputType": "Remittance (R-TYPE)",
+  "outputType": "Payment File",
+  "inputEncrypted": false,
+  "outputEncrypted": false,
+  "confidential": false,
+  "inputFileFormat": "txt",
+  "outputFileFormat": "xml",
+  
+"valueDateChange": {
+  "enabled": true,
+  "dateFormat": "yyyyMMdd",
+  "daysToAdd": 2,
+  "delimiterConfig": {
+    "delimiter": ",",
+    "dateColumnIndex": 7,
+    "startingRow": 1
+  }
+},
+  
+  "testScenarios": [
+    {
+      "success": [
+        {
+          "updateValueDateinFile": true,
+          "description": "PSB, FT testing on scenarios 1,2,3,4,5",
+          "inputFileLoc": "/Lenovo/Downloads/fixed_length_payment.txt",
+          "expectedOutputFile": "/Lenovo/Downloads/Payment_File_Output.xml"
+        }
+      ],
+      "failure": [
+        {
+          "updateValueDateinFile": false,
+          "description": "Failure Scenarios - All validation errors",
+          "inputFileLoc": "/Lenovo/Downloads/fixed_length_errors.txt",
+          "failureResuts": [
+            {
+              "col1errorMessage": "2",
+              "col2errorMessage": "Debit Account Number: Invalid format"
+            },
+            {
+              "col1errorMessage": "5",
+              "col2errorMessage": "Beneficiary Account Number: No value found"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
