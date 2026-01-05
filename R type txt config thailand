@@ -52,3 +52,48 @@
   ]
 }
 
+
+---------------------------------------------------------------------
+
+
+
+
+{
+  "name": "th-Rtpe-Input file format",
+  "description": "success failure test cases for fixed length payment file - PPS, FT",
+  "inputType": "Remittance (R-TYPE)",
+  "outputType": "Bulk",
+  "inputEncrypted": false,
+  "outputEncrypted": false,
+  "confidential": false,
+  "inputFileFormat": "txt",
+  "outputFileFormat": "xml",
+
+  "valueDateChange": {
+    "enabled": true,
+    "dateFormat": "yyyyMMdd",
+    "daysToAdd": 2,
+    "delimiterConfig": {
+      "delimiter": ",",
+      "dateColumnIndex": 7,
+      "startingRow": 1
+    }
+  },
+  "testScenario": [
+    {
+      "success": [
+        {
+          "updateValueDateinFile": true,
+          "description": "PSB, FT testing on scenarios 1,2,3,4,5",
+          "inputFileLoc": "/Lenovo/Downloads/R type-All (2) - Copy.txt",
+          "expectedOutputFiles": {
+            "DC": "/Lenovo/Downloads/DB_DC_2J_0105145113200.xml",
+            "BN": "/Lenovo/Downloads/DB_BN_2J_0105145113200.xml",
+            "MC": "/Lenovo/Downloads/DB_MC_2J_0105145113200.xml"
+          }
+        }
+      ]
+    }
+  ]
+}
+
