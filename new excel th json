@@ -6,7 +6,6 @@
   "inputEncrypted": false,
   "outputEncrypted": false,
   "confidential": false,
-  "valueDateColumn": "M",
   "inputFileFormat": "xlsx",
   "outputFileFormat": "xml",
 
