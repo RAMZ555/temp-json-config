@@ -27,6 +27,36 @@
           }
         }
       ]
+    },
+"failure": [
+  {
+    "updateValueDateinFile": false,
+    "description": "<BULK Validation Failures - All Transaction Types>",
+    "inputFileLoc": "/Lenovo/Downloads/BULK_Invalid_All_Types.xlsx",
+    "failureResults": {
+      "DC": [
+        {"col1errorMessage": "1", "col2errorMessage": "DC errors..."}
+      ],
+      "BN": [
+        {"col1errorMessage": "1", "col2errorMessage": "BN errors..."}
+      ],
+      "MC": [
+        {"col1errorMessage": "1", "col2errorMessage": "MC errors..."}
+      ],
+      "FT": [
+        {"col1errorMessage": "1", "col2errorMessage": "FT errors..."}
+      ],
+      "TT": [
+        {"col1errorMessage": "1", "col2errorMessage": "TT errors..."}
+      ],
+      "PPSingle": [
+        {"col1errorMessage": "1", "col2errorMessage": "PPS errors..."}
+      ],
+      "PPBulk": [
+        {"col1errorMessage": "1", "col2errorMessage": "PPB errors..."}
+      ]
     }
-  ]
+  }
+]
+]
 }
