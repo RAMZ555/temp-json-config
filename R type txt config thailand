@@ -29,30 +29,28 @@
           "inputFileLoc": "/Lenovo/Downloads/R type-All (2).txt",
           "expectedOutputFile": "/Lenovo/Downloads/Payment_File_1J_0105132139776.xml"
         }
-      ]
-    },
-      "failure": [
-        {
-          "updateValueDateinFile": false,
-          "description": "Failure Scenarios - All validation errors",
-          "inputFileLoc": "/Lenovo/Downloads/fixed_length_errors.txt",
-          "failureResuts": [
-            {
-              "col1errorMessage": "2",
-              "col2errorMessage": "Debit Account Number: Invalid format"
-            },
-            {
-              "col1errorMessage": "5",
-              "col2errorMessage": "Beneficiary Account Number: No value found"
-            }
-          ]
-        }
-      ]
-    }
+      ],
+
+    "failure": [
+      {
+        "updateValueDateinFile": false,
+        "description": "Failure Scenarios - All validation errors",
+        "inputFileLoc": "/Lenovo/Downloads/R type-All TT invalid.txt",
+        "failureResults": [
+          {
+            "col1errorMessage": "2",
+            "col2errorMessage": "Beneficiary Account Number and Bene Name check: No value is found or having Multiple Beneficiary Account values\nBeneficiary Name: Beneficiary Name cannot be empty or Beneficiary Name does not exist in the DUO.\nBeneficiary Bank Charges: Allowed values are \"1\", \"2\" or\"3\" .\nBeneficiary Name: Should not allow special characters like Thai."
+          },
+          {
+            "col1errorMessage": "4",
+            "col2errorMessage": "Beneficiary Bank Charges: Bank Charges is Empty in Input File\nBeneficiary Bank Charges: Allowed values are \"1\", \"2\" or\"3\" ."
+          }
+        ]
+      }
+    ]
+      }
   ]
 }
-
-
 ---------------------------------------------------------------------
 
 
