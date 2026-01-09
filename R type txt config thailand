@@ -125,3 +125,48 @@
   ]
 }
 
+-------------------------------------------------------------------------------------------
+
+{
+  "name": "Th_R_type_Bulk",
+  "description": "Bulk Valid and invalid File comparison",
+  "inputType": "Remittance (R-TYPE)",
+  "outputType": "Bulk",
+  "inputEncrypted": false,
+  "outputEncrypted": false,
+  "confidential": false,
+  "inputFileFormat": "txt",
+  "outputFileFormat": "xml",
+
+  "valueDateChange": {
+    "enabled": true,
+    "dateFormat": "yyyyMMdd",
+    "daysToAdd": 2,
+    "delimiterConfig": {
+      "delimiter": ",",
+      "dateColumnIndex": 7,
+      "startingRow": 1
+    }
+  },
+  "testScenario": [
+    {
+      "success": [
+        {
+          "updateValueDateinFile": true,
+          "description": "Bulk Valid File Comparison",
+          "inputFileLoc": "/Lenovo/Downloads/R_type_Bulk Files/Rtype-All payments.txt",
+          "expectedOutputFiles": {
+            "BN": "/Lenovo/Downloads/R_type_Bulk Files/DB_BN_SB_0107185553772.xml",
+            "MC": "/Lenovo/Downloads/R_type_Bulk Files/DB_MC_SB_0107185553772.xml",
+            "DC": "/Lenovo/Downloads/R_type_Bulk Files/DB_DC_SB_0107185553772.xml",
+            "FT": "/Lenovo/Downloads/R_type_Bulk Files/DB_FT_SB_0107185553772.xml",
+            "TT": "/Lenovo/Downloads/R_type_Bulk Files/DB_TT_SB_0107185553772.xml"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+
