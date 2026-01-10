@@ -1,0 +1,86 @@
+{
+  "name": "MY - R type",
+  "description": "Valid and invalid  file comparison",
+  "inputType": "Ambank - Giro",
+  "debitAccountNumber": "H12345-MYR",
+  "outputType": "Payment File",
+  "inputEncrypted": false,
+  "outputEncrypted": false,
+  "confidential": false,
+  "inputFileFormat": "txt",
+  "outputFileFormat": "csv",
+
+  "valueDateChange": {
+    "enabled": true,
+    "dateFormat": "yyyyMMdd",
+    "daysToAdd": 2,
+    "delimiterConfig": {
+      "delimiter": ",",
+      "dateColumnIndex": 7,
+      "startingRow": 1
+    }
+  },
+
+  "testScenario": [
+    {
+      "success": [
+        {
+          "updateValueDateinFile": false,
+          "description": "PSB, FT testing on scenarios 1,2,3,4,5",
+          "inputFileLoc": "/Lenovo/Downloads/Ambank Vaild 02.txt",
+          "expectedOutputFile": "/Lenovo/Downloads/PMGIRO_260130_ZB_0109164220098_01.csv"
+        }
+      ],
+
+      "failure": [
+        {
+          "updateValueDateinFile": false,
+          "description": "Failure Scenarios - All validation errors",
+          "inputFileLoc": "/Lenovo/Downloads/Ambank  invaild -Error.txt",
+          "failureResults": [
+            {
+              "col1errorMessage": "3",
+              "col2errorMessage": "Payment Value Date: This is a mandatory field, if the value exist Date format should be DD/MM/YYYY and Date should be greater or equal to current date and less than current date + 30"
+            },
+            {
+              "col1errorMessage": "4",
+              "col2errorMessage": "GIRO Payment Method: Value must be PROPAY_GIRO"
+            },
+            {
+              "col1errorMessage": "6",
+              "col2errorMessage": "Beneficiary Name: Value should not be empty and Value should only contain standard characters and cannot start with SPACE / : -"
+            },
+            {
+              "col1errorMessage": "7",
+              "col2errorMessage": "Ambank Running Number: Value should only contain standard characters and cannot start with SPACE / : -"
+            },
+            {
+              "col1errorMessage": "8",
+              "col2errorMessage": "\tPayment Amount: This is a mandatory field, if the value exists, then it should not contain comma, and no alphabets or special characters are allowed\nPayment Amount: The payment amount should not be greater than the maximum amount for GIRO"
+            },
+            {
+              "col1errorMessage": "10",
+              "col2errorMessage": "\tBene Bank Code: Value should not be empty, if the value exists then Bene Bank Code should exist in the system."
+            },
+            {
+              "col1errorMessage": "11",
+              "col2errorMessage": "Beneficiary Account number: Value should not be empty, if the value exists then spacing and special characters are not allowed"
+            },
+            {
+              "col1errorMessage": "13",
+              "col2errorMessage": "\tEmail Address: Email should not have any space and should not have any symbol at the end of the email address"
+            },
+            {
+              "col1errorMessage": "14",
+              "col2errorMessage": "Payment Reference: Value should only contain standard characters and cannot start with SPACE / : -"
+            },
+            {
+              "col1errorMessage": "15",
+              "col2errorMessage": "Currency: Value must be MYR"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
