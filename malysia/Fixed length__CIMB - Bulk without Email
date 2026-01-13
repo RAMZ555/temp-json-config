@@ -1,0 +1,38 @@
+{
+  "name": "MY - R type",
+  "description": "Valid and invalid  file comparison",
+  "inputType": "CIMB - Bulk pay",
+  "debitAccountNumber": "H12345-MYR",
+  "outputType": "payment",
+  "inputEncrypted": false,
+  "outputEncrypted": false,
+  "confidential": false,
+  "inputFileFormat": "txt",
+  "outputFileFormat": "txt",
+
+  "valueDateChange": {
+    "enabled": true,
+    "dateFormat": "ddMMyyyy",
+    "daysToAdd": 30,
+    "fixedLengthConfig": {
+      "startPosition": 47,
+      "endPosition": 55,
+      "startingRow": 0,
+      "recordTypeFilter": "01",
+      "recordTypePosition": 0
+    }
+  },
+
+  "testScenario": [
+    {
+      "success": [
+        {
+          "updateValueDateinFile": true,
+          "description": "PSB, FT testing on scenarios 1,2,3,4,5",
+          "inputFileLoc": "/Lenovo/Downloads/CIMB - Bulk without Email - AP20250513170845.txt",
+          "expectedOutputFile": "/Lenovo/Downloads/CIMB - Bulk without Email - AP20250513170845.csv"
+        }
+      ]
+    }
+  ]
+}
